@@ -87,6 +87,9 @@ class ProductConfigSession(models.Model):
                                 values.update(parent_bom_line_vals)
                                 bom_lines.append((0, 0, values))
                 else:
+                    # Support 'Apply on variants' system
+                    if parent_bom_line._skip_bom_line(variant):
+                        continue
                     parent_bom_line_vals = {
                         "product_id": parent_bom_line.product_id.id,
                         "product_qty": parent_bom_line.product_qty,

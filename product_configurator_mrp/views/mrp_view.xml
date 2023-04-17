@@ -86,15 +86,6 @@
                 <attribute name="force_save">True</attribute>
             </xpath>
 
-            <xpath
-                expr="//field[@name='bom_product_template_attribute_value_ids']"
-                position="attributes"
-            >
-                <attribute
-                    name="attrs"
-                >{'column_invisible': [('parent.type','not in', ('normal', 'phantom'))], 'readonly': [('parent.config_ok', '=', True)]}</attribute>
-            </xpath>
-
              <xpath
                 expr="//field[@name='bom_product_template_attribute_value_ids']"
                 position="after"
